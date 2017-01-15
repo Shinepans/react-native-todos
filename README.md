@@ -19,3 +19,21 @@ ShinePans Todos
 ## 当前App路由
 
 > 通过全局route控制
+
+## 操作
+
+> 长按每一项显示菜单
+
+## 示意图
+
+### 主界面
+
+![主界面]('./docs/homepage.png')
+
+### 列表页
+
+![列表页面]('./docs/list.png')
+
+### 编辑页
+
+![编辑页]('./docs/edit.png')
