@@ -3,6 +3,8 @@ a start of react native-android_or_ios
 
 ## 运行项目
 
+> npm install
+
 > react-native run-android
 
 - 目前在安卓端调试与开发
@@ -28,12 +30,12 @@ ShinePans Todos
 
 ### 主界面
 
-![主界面]('./docs/homepage.png')
+![主界面](./docs/homepage.png)
 
 ### 列表页
 
-![列表页面]('./docs/list.png')
+![列表页面](./docs/list.png)
 
 ### 编辑页
 
-![编辑页]('./docs/edit.png')
+![编辑页](./docs/edit.png)
