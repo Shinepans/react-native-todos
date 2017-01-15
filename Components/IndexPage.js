@@ -38,11 +38,11 @@ class IndexPage extends Component {
                 </View>
                 <View style={styles.button}>
                     <Button
-                      onPress={onPressAbout}
-                      style={styles.button}
-                      title="关        于"
-                      color="#841584"
-                      accessibilityLabel="Learn more about this purple button"
+                        onPress={onPressAbout}
+                        style={styles.button}
+                        title="关        于"
+                        color="#841584"
+                        accessibilityLabel="Learn more about this purple button"
                     />
                 </View>
             </View>

@@ -15,3 +15,7 @@ ShinePans Todos
 ## 远程调试
 
 > 在setting中设置与服务器ip与端口保持一致
+
+## 当前App路由
+
+> 通过全局route控制

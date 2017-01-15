@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IndexPage from './Components/IndexPage';
+import TODO from './Components/TODO';
 import {
     AppRegistry,
     StyleSheet,
@@ -32,9 +33,7 @@ class ReactNativeTodos extends Component {
                 );
             default: 
                 return (
-                    <Text>
-                        err
-                    </Text>
+                    <TODO CRFN={this.CRFN} />
                 );
         }
     }
