@@ -11,3 +11,7 @@ ShinePans Todos
 ## 调试
 
 > 建议开启hot Reloading
+
+## 远程调试
+
+> 在setting中设置与服务器ip与端口保持一致
