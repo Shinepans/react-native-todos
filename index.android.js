@@ -1,32 +1,45 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+    AppRegistry,
+    StyleSheet,
+    Text,
+    Button,
+    View,
+    Alert
 } from 'react-native';
+
+const onPressAbout = () => {
+    Alert.alert('欢迎使用 Shinepans Todos');
+};
 
 export default class ReactNativeTodos extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+        <View style={styles.container}>
+            <Text style={styles.welcome}>
+                Todos
+            </Text>
+            <Text style={styles.instructions}>
+                v 1.0 CopyRight 2017-2017 Shinepans
+            </Text>
+            <View style={styles.button}>
+                <Button
+                    onPress={onPressAbout}
+                    title="开始使用"
+                    color="#841584"
+                    accessibilityLabel="Welcome"
+                />
+            </View>
+            <View style={styles.button}>
+                <Button
+                  onPress={onPressAbout}
+                  style={styles.button}
+                  title="关        于"
+                  color="#841584"
+                  accessibilityLabel="Learn more about this purple button"
+                />
+            </View>
+        </View>
     );
   }
 }
@@ -39,14 +52,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 32,
+    color: '#000',
     textAlign: 'center',
-    margin: 10,
+    position: 'absolute',
+    top: 60,
+    left: 140,
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: 'grey',
+    fontSize: 16,
     marginBottom: 5,
+    position: 'absolute',
+    bottom: 120,
+    left: 40,
+  },
+  button: {
+    marginTop: 20,
+    width: 120,
   },
 });
 
