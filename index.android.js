@@ -12,6 +12,10 @@ const onPressAbout = () => {
     Alert.alert('欢迎使用 Shinepans Todos');
 };
 
+const onStartUse = () => {
+
+};
+
 export default class ReactNativeTodos extends Component {
   render() {
     return (
@@ -24,7 +28,7 @@ export default class ReactNativeTodos extends Component {
             </Text>
             <View style={styles.button}>
                 <Button
-                    onPress={onPressAbout}
+                    onPress={onStartUse}
                     title="开始使用"
                     color="#841584"
                     accessibilityLabel="Welcome"

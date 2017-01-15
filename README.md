@@ -7,3 +7,7 @@ a start of react native-android_or_ios
 
 - 目前在安卓端调试与开发
 ShinePans Todos
+
+## 调试
+
+> 建议开启hot Reloading
