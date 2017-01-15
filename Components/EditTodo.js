@@ -24,9 +24,14 @@ class ToDoEdit extends React.Component {
     onUpdate() {
         let value = this.refs.form.getValue();
         if (value) {
-            this.props.update(value, this.props.id);
+            this.props.UP(value, this.props.id);
         }
+        this.props.CRFN('all');
     }
+
+    onBack = () => {
+        this.props.CRFN('all');
+    };
 
     render() {
         return (
@@ -36,12 +41,18 @@ class ToDoEdit extends React.Component {
                     type={ToDo}
                     onChange={this._onChange}
                     options={options}
-                    value={this.props.item}/>
+                    value={this.props.rowData}/>
                 <TouchableHighlight
                     style={[styles.button, styles.saveButton]}
                     onPress={this.onUpdate}
                     underlayColor='#99d9f4'>
-                    <Text style={styles.buttonText}>Save</Text>
+                    <Text style={styles.buttonText}>保存</Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    style={[styles.button, styles.saveButton]}
+                    onPress={this.onBack}
+                    underlayColor='#99d9f4'>
+                    <Text style={styles.buttonText}>返回</Text>
                 </TouchableHighlight>
             </View>
         )
@@ -74,7 +85,8 @@ const styles = StyleSheet.create({
         height: 36,
         backgroundColor: '#48BBEC',
         alignSelf: 'stretch',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: 8,
     },
 
     saveButton: {

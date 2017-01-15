@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TodoList from './TodoList';
+import EditTodo from './EditTodo';
 import {
     AppRegistry,
     StyleSheet,
@@ -10,7 +11,7 @@ import {
     TouchableHighlight,
     Alert
 } from 'react-native';
-
+ 
 let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
 class TODO extends Component {
@@ -20,7 +21,8 @@ class TODO extends Component {
             route: 'all',
             items: [
                 {txt: '开始使用Shinepans Todos 吧~', complete: false},
-                {txt: '今天要做点什么事呢?', complete: true}
+                {txt: '今天要做点什么事呢?', complete: true},
+                {txt: '谢谢使用这个程序 :)', complete: false}
             ]
         };
     }
@@ -31,6 +33,7 @@ class TODO extends Component {
                     <View style={{flex:1}}>
                         <TodoList
                             items={this.state.items}
+                            onLongPressItem={this.alertMenu}
                             onPressItem={this.Edit}/>
                         <TouchableHighlight
                             style={[styles.button, styles.newButton]}
@@ -38,15 +41,38 @@ class TODO extends Component {
                             onPress={this.Edit}>
                             <Text style={styles.buttonText}>新增</Text>
                         </TouchableHighlight>
+                        <TouchableHighlight
+                            style={[styles.button, styles.newButton]}
+                            underlayColor='#99d9f4'
+                            onPress={this.onHome}>
+                            <Text style={styles.buttonText}>返回主页</Text>
+                        </TouchableHighlight>
                     </View>
                 );
             case 'edit' :
                 return (
-                    <Text>
-                    </Text>
+                    <EditTodo 
+                        UP={this.UP}
+                        CRFN={this.CRFN}
+                        rowData={this.state.rowData}
+                        rowID={this.rowID}
+                    />
                 )
         }
     }
+
+    // 长按行为
+    alertMenu = (rowData, rowID) => {
+        Alert.alert(
+            '菜单',
+            null,
+            [
+                {text: '删除', onPress: () => this.DEL(rowID)},
+                {text: '编辑', onPress: () => this.Edit(rowData, rowID)},
+                {text: '取消'}
+            ]
+        )
+    };
 
     // this CRFN
     CRFN = (route, rowData, rowID) => {
@@ -74,7 +100,7 @@ class TODO extends Component {
         let items = this.state.items;
         if (idx) {
             items[idx] = item;
-        }
+        }    
         else {
             items.push(item)
         }
@@ -113,7 +139,8 @@ const styles = StyleSheet.create({
         height: 36,
         backgroundColor: '#48BBEC',
         alignSelf: 'stretch',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: 8,
     },
 
     saveButton: {

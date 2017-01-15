@@ -17,7 +17,9 @@ class ToDoList extends React.Component {
             <ListView
                 dataSource={dataSource}
                 renderRow={(rowData, sectionID, rowID) =>
-                    <ToDoListItem item={rowData}
+                    <ToDoListItem 
+                        item={rowData}
+                        onLongPress={() => this.props.onLongPressItem(rowData, rowID)}
                         onPress={() => this.props.onPressItem(rowData, rowID)}/>
                     }
                 style={styles.listView}/>

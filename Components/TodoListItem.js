@@ -7,6 +7,7 @@ class ToDoListItem extends React.Component {
         return (
             <View>
                 <TouchableHighlight
+                    onLongPress={this.props.onLongPress}
                     onPress={this.props.onPress}>
                     <View style={styles.container}>
                         <Text
