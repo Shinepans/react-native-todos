@@ -86,6 +86,15 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
+    debug {
+        buildConfigField "String", "CODEPUSH_KEY"
+    }
+    releaseStaging {
+        buildConfigField "String", "CODEPUSH_KEY"
+    }
+    release {
+        buildConfigField "String", "CODEPUSH_KEY"
+    }
     defaultConfig {
         applicationId "com.reactnativetodos"
         minSdkVersion 16
@@ -105,11 +114,16 @@ android {
         }
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+    }
+    /*buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
-    }
+    }*/
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -126,6 +140,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-wechat-android')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules

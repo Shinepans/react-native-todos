@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import codePush from "react-native-code-push";
 import IndexPage from './Components/IndexPage';
 import TODO from './Components/TODO';
 import {
@@ -72,4 +73,6 @@ const styles = StyleSheet.create({
     },
 });
 
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
+ReactNativeTodos = codePush(codePushOptions)(ReactNativeTodos);
 AppRegistry.registerComponent('ReactNativeTodos', () => ReactNativeTodos);
