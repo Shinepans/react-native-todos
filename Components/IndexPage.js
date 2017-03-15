@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import WeChat from 'react-native-wechat-android';
 
-const appId = 'wxc7fec887ec1fb03c';
+const appId = '****';
 
 
 const onPressAbout = () => {

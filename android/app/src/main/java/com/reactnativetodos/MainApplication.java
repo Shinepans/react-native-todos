@@ -6,6 +6,7 @@ import android.util.Log;
 import com.facebook.react.ReactApplication;
 import com.heng.wechat.WeChatPackage;
 import com.microsoft.codepush.react.CodePush;
+import com.microsoft.codepush.react.ReactInstanceHolder;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -34,7 +35,7 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
           new WeChatPackage(),
-          new CodePush(BuildConfig.CODEPUSH_KEY, MainApplication.this, BuildConfig.DEBUG)
+          new CodePush("fG6Vay0mz4q9UYCsmpmxoLIGbvftNkHScFbif", MainApplication.this, BuildConfig.DEBUG)
       );
     }
   };
