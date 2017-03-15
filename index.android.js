@@ -26,6 +26,11 @@ class ReactNativeTodos extends Component {
             route: 'main'
         };
     }
+
+    componentDidMount() {
+        codePush.sync();
+    }
+
     render() {
         switch(this.state.route){
             case 'main':
@@ -73,6 +78,4 @@ const styles = StyleSheet.create({
     },
 });
 
-let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
-ReactNativeTodos = codePush(codePushOptions)(ReactNativeTodos);
 AppRegistry.registerComponent('ReactNativeTodos', () => ReactNativeTodos);

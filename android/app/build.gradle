@@ -86,15 +86,6 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
-    debug {
-        buildConfigField "String", "CODEPUSH_KEY"
-    }
-    releaseStaging {
-        buildConfigField "String", "CODEPUSH_KEY"
-    }
-    release {
-        buildConfigField "String", "CODEPUSH_KEY"
-    }
     defaultConfig {
         applicationId "com.reactnativetodos"
         minSdkVersion 16
@@ -115,15 +106,17 @@ android {
     }
     buildTypes {
         debug {
-            applicationIdSuffix ".debug"
+            buildConfigField "String", "CODEPUSH_KEY", "joMMl6f_ZA4oTLDZvGcwyxLn4rDGNkHScFbif"
         }
-    }
-    /*buildTypes {
+        releaseStaging {
+            buildConfigField "String", "CODEPUSH_KEY", "joMMl6f_ZA4oTLDZvGcwyxLn4rDGNkHScFbif"
+        }
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            buildConfigField "String", "CODEPUSH_KEY", "joMMl6f_ZA4oTLDZvGcwyxLn4rDGNkHScFbif"
         }
-    }*/
+    }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
